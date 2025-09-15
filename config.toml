@@ -1,0 +1,102 @@
+[settings]
+botToken = ""
+botDescription = "Catch, collect and exchange Aston Martins in your server!"
+botName = "AstonMartinDex"
+prefix = "!"
+maxFavorites = 50
+defaultEmbedColor = "1F8B4C"
+
+[spawn-manager]
+requiredMessageRange =  [22, 35] # The required number of messages to be sent after the cooldown to spawn.
+spawnMessages = [
+    { message = "A wild Aston has appeared!", rarity = 10 },
+    { message = "A Aston Martin zooms past at lightning speed!", rarity = 9 },
+    { message = "A loud honk is heard, and suddenly... a Aston Martin!", rarity = 8 },
+    { message = "An explosion echoes in the distance... it's a Aston Martin!", rarity = 7 },
+    { message = "The ground shakes as a Aston Martin emerges from the shadows!", rarity = 6 },
+    { message = "A blizzard blows in, and with it comes a Aston martin!", rarity = 5 },
+    { message = "A mysterious portal opens... and out steps a Aston martin!", rarity = 4 },
+    { message = "Woah, is that a British monster?!", rarity = 3 },
+    { message = "A drop has been spotted, and it has a Aston inside it!", rarity = 2 },
+    { message = "Think fast chucklenuts!", rarity = 1 },
+    { message = "A Aston Martin sneaks up behind you! Boo!", rarity = 0.5 },
+]
+catchButtonMessages = [
+    { message = "Catch Me!", rarity = 10 },
+    { message = "Catch This Aston Martin!", rarity = 8 },
+]
+wrongNameMessages = [
+    { message = "Wrong Name!", rarity = 10 },
+    { message = "Try again!", rarity = 8 },
+    { message = "Lol one more time!", rarity = 4 },
+    { message = "Big skill issue hahaha!", rarity = 2 }
+]
+catchBonusRate = [-50, 50]
+cooldownTime = 800 # in seconds
+minimumMembersRequired = 15
+
+[team]
+# This section is meant for administrator commands logging and staff purposes.
+
+# A list of IDs that must be considered owners in addition to the application/team owner.
+# Separate IDs with commas (,)
+roots = [1295031019153395753,791076850222235657,1307114898353950811,781784068354342932]
+
+# List of guild IDs where the /sudo command should be registered
+# and a list of role IDs that have access to the command.
+# Separate IDs with commas (,).
+superGuilds = [1409858044233384007]
+superUsers = [1295031019153395753,791076850222235657,1307114898353950811,781784068354342932]
+
+# Log channel ID for Admin commands logging.
+logChannel = 1361678430911074551
+
+
+[appearance.interface]
+collectible = { singular = "aston martin", plural = "aston martin" } # Must be lowercased.
+album = "Type"
+country = "Logo"
+exclusive = "Exclusive"
+horsepower = { name = "Horsepower", unit = "HP" }
+weight = { name = "Weight", unit = "KG"}
+
+[appearance.commands]
+cars = "cars"
+sudo = "sudo"
+garage = { name = "garage", desc = "Show your garage!" }
+exhibit = { name = "exhibit", desc = "Show your showroom in the bot." }
+show = { name = "show", desc = "Display info from your aston martin collection." }
+info = { name = "info", desc = "Display info for a specific aston martin." }
+gift = { name = "gift", desc = "Give a aston martin to a user." }
+
+[information]
+## This section is also one of bot's main factures that provides information about the bot which can help others to find more information about the bot.
+
+repositoryLink = "https://github.com/The-CF-Project/CarFigures"
+serverInvite = "https://discord.gg/2UZKrRFt9r"
+termsOfService = "https://github.com/thecfproject/CarFigures/blob/upstream/assets/TERMS_OF_SERVICE.md"
+privacyPolicy = "https://github.com/thecfproject/CarFigures/blob/upstream/assets/PRIVACY_POLICY.md"
+
+# While this is made to make it easier to include yourself and your team/contributors
+# you are NOT allowed to remove El Laggron or Array_YE.
+# Separate names with commas (,).
+developers = [
+    "El Laggron",
+    "JRuntime",
+    "M3.csl",
+     "joel",
+]
+contributors = [
+    "ur_fernando_alonso14",
+     "sci_chphat3",
+     "kiran04502",
+     "xp777777",
+     "p996lazermhmd",
+      "bezdavid",
+    
+]
+[prometheus] # If you don't know what does this do, don't touch it.
+enabled = false
+host = "0.0.0.0"
+port = 15260
+

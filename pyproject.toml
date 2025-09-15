@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "carfigures"
+version = "2.1.0"
+description = ""
+authors = ["array_ye <array_ye@proton.me>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+# asyncio
+uvloop = { version = "^0.21.0", markers = "sys_platform != 'win32'" }
+
+# discord
+"discord.py" = "^2.4.0"
+
+# Panel
+fastapi = "^0.115.6"
+fastapi-admin = {git = "https://github.com/fastapi-admin/fastapi-admin", rev = "ebea3bf71689caa583fe55aa25db899cf8eeae31"}
+uvicorn = "^0.32.1"
+
+# TortoiseORM
+tortoise-orm = {extras = ["asyncpg"], version = "^0.22.2"}
+tortoise-cli = "^0.1.2"
+
+# misc
+rich = "^13.9.4"
+python-dateutil = "^2.9.0"
+Pillow = "^11.0.0"
+aerich = "^0.6.3"
+cachetools = "^5.5.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+ruff = "^0.8.2"
+
+[tool.poetry.group.metrics.dependencies]
+prometheus-client = "^0.16.0"
+
+[tool.aerich]
+tortoise_orm = "carfigures.__main__.TORTOISE_ORM"
+location = "./migrations"
+src_folder = "./carfigures"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 99
+
