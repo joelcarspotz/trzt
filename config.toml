@@ -95,6 +95,17 @@ contributors = [
       "bezdavid",
     
 ]
+[coins]
+# Coin reward system configuration
+dailyClaimAmount = 100
+catchRewardBase = 50
+catchRewardBonusRange = [-10, 25]
+
+[coins.packPrices]
+basic = 500
+premium = 1000
+legendary = 2500
+
 [prometheus] # If you don't know what does this do, don't touch it.
 enabled = false
 host = "0.0.0.0"
