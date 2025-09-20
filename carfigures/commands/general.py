@@ -50,7 +50,8 @@ class GeneralCommands(commands.Cog):
             coin_commands = (
                 f"`{self.bot.command_prefix}daily` - Claim daily coin reward\n"
                 f"`{self.bot.command_prefix}balance` - Check your coin balance\n"
-                f"`{self.bot.command_prefix}leaderboard` - View top coin holders"
+                f"`{self.bot.command_prefix}leaderboard` - View top coin holders\n"
+                f"`{self.bot.command_prefix}casino <amount|all|half>` - Gamble your coins"
             )
             embed.add_field(name="💰 Coin Commands", value=coin_commands, inline=False)
             
