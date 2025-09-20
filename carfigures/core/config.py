@@ -40,6 +40,23 @@ class CoinConfig:
 
 
 @dataclass
+class CasinoGameConfig:
+    enabled: bool
+    max_bet: int
+    min_bet: int
+
+
+@dataclass
+class CasinoConfig:
+    enabled: bool
+    min_bet: int
+    max_bet_multiplier: int
+    max_bet_cap: int
+    game_timeout_seconds: int
+    games: Dict[str, CasinoGameConfig]
+
+
+@dataclass
 class Config:
     bot_token: str
     bot_description: str
@@ -50,6 +67,7 @@ class Config:
     spawn_manager: SpawnManagerConfig
     team: TeamConfig
     coin_config: CoinConfig
+    casino_config: CasinoConfig
     
     @classmethod
     def from_file(cls, path: Path) -> "Config":
@@ -102,6 +120,27 @@ class Config:
             })
         )
         
+        # Parse casino configuration
+        casino_data = data.get("casino", {})
+        casino_games_data = casino_data.get("games", {})
+        
+        casino_games = {}
+        for game_name, game_data in casino_games_data.items():
+            casino_games[game_name] = CasinoGameConfig(
+                enabled=game_data.get("enabled", True),
+                max_bet=game_data.get("maxBet", 1000),
+                min_bet=game_data.get("minBet", 10)
+            )
+        
+        casino_config = CasinoConfig(
+            enabled=casino_data.get("enabled", True),
+            min_bet=casino_data.get("minBet", 10),
+            max_bet_multiplier=casino_data.get("maxBetMultiplier", 10),
+            max_bet_cap=casino_data.get("maxBetCap", 10000),
+            game_timeout_seconds=casino_data.get("gameTimeoutSeconds", 30),
+            games=casino_games
+        )
+        
         return cls(
             bot_token=data["settings"]["botToken"],
             bot_description=data["settings"]["botDescription"],
@@ -111,5 +150,6 @@ class Config:
             default_embed_color=data["settings"]["defaultEmbedColor"],
             spawn_manager=spawn_manager,
             team=team,
-            coin_config=coin_config
+            coin_config=coin_config,
+            casino_config=casino_config
         )

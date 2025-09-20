@@ -106,6 +106,22 @@ basic = 500
 premium = 1000
 legendary = 2500
 
+[casino]
+# Casino system configuration
+enabled = true
+minBet = 10
+maxBetMultiplier = 10  # Max bet = balance * multiplier, capped at maxBetCap
+maxBetCap = 10000
+gameTimeoutSeconds = 30
+
+[casino.games]
+# Individual game settings
+slots = { enabled = true, maxBet = 10000, minBet = 10 }
+coinflip = { enabled = true, maxBet = 5000, minBet = 10 }
+dice = { enabled = true, maxBet = 2000, minBet = 10 }
+blackjack = { enabled = true, maxBet = 5000, minBet = 10 }
+roulette = { enabled = true, maxBet = 1000, minBet = 10 }
+
 [prometheus] # If you don't know what does this do, don't touch it.
 enabled = false
 host = "0.0.0.0"
