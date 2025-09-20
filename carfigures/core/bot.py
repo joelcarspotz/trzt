@@ -10,6 +10,7 @@ from carfigures.core.config import Config
 from carfigures.commands.coins import CoinsCommands
 from carfigures.commands.packs import PackCommands
 from carfigures.commands.general import GeneralCommands
+from carfigures.commands.casino import CasinoCommands
 from carfigures.utils.coins import CoinManager
 
 logger = logging.getLogger(__name__)
@@ -45,6 +46,7 @@ class CarFiguresBot(commands.Bot):
         await self.add_cog(CoinsCommands(self))
         await self.add_cog(PackCommands(self))
         await self.add_cog(GeneralCommands(self))
+        await self.add_cog(CasinoCommands(self))
         
         logger.info("Bot setup complete!")
     
