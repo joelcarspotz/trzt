@@ -106,6 +106,33 @@ basic = 500
 premium = 1000
 legendary = 2500
 
+[casino]
+# Casino game configuration
+enabled = true
+minBet = 10
+maxBet = 10000
+
+[casino.slots]
+# Slot machine configuration
+symbols = ["🍒", "🍋", "🍊", "🍇", "💎", "7️⃣"]
+threeMatchMultiplier = 3
+twoMatchMultiplier = 2
+
+[casino.dice]
+# Dice game configuration
+correctGuessMultiplier = 6
+
+[casino.blackjack]
+# Blackjack configuration
+blackjackMultiplier = 2.5
+winMultiplier = 2
+
+[casino.roulette]
+# Roulette configuration
+redBlackMultiplier = 2
+greenMultiplier = 14
+numberMultiplier = 36
+
 [prometheus] # If you don't know what does this do, don't touch it.
 enabled = false
 host = "0.0.0.0"

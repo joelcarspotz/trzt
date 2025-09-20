@@ -4,6 +4,7 @@ from .user import User
 from .car import Car, UserCar
 from .coins import UserCoins, DailyClaim
 from .packs import Pack, PackContent, UserPack
+from .casino import CasinoGame, CasinoStats, CasinoLeaderboard
 
 __all__ = [
     "User",
@@ -13,5 +14,8 @@ __all__ = [
     "DailyClaim",
     "Pack",
     "PackContent", 
-    "UserPack"
+    "UserPack",
+    "CasinoGame",
+    "CasinoStats",
+    "CasinoLeaderboard"
 ]
